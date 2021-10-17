@@ -19,16 +19,12 @@ li {
   list-style-type: none;
 }
 ._title {
-  //padding: 20px;
   margin-bottom: 20px;
   font-family: 'Montserrat';
   font-weight: 700;
 }
 .wrapper {
-  margin: 0 50px;
   display: grid;
-  /* grid-template-columns: 200px 1fr;
-  grid-template-rows: 60px 1fr 300px; */
   grid-template-areas: 
   "header"
   "main"
@@ -36,21 +32,14 @@ li {
 }
 .header {
   grid-area: header;
-  border: 1px solid red;
+  background-color: #FCF8F3;
+ // border: 1px solid red;
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
   align-items: center;
   height: 60px;
   padding: 0 20px;
-		// .header__logo
-
-		&__logo {
-
-		}
-
-		// .header__name
-
 		&__name {
       font-size: 20px;
       font-weight: bold;
@@ -58,33 +47,24 @@ li {
 }
 .main {
   grid-area: main;
-  border: 1px solid green;
+ // border: 1px solid green;
   display: grid;
   grid-template-columns: minmax(29.297vw, 300px) 1fr;
   grid-template-rows: 1fr 2fr;
-		// .main__sidebar
-
-		&__sidebar {
-		}
 }
 .sidebar {
-  border: 1px solid black;
+  //border: 1px solid black;
   grid-row-start: 1;
   grid-row-end: 3;
-		// .sidebar__menu
-
+	
 		&__menu {
       padding: 20px;
 		}
-
-		// .sidebar__list
 
 		&__list {
       display: flex;
       flex-direction: column;
 		}
-
-    // .sidebar__item
 
 		&__item {
       &:not(:last-child) {
@@ -93,111 +73,101 @@ li {
       
 		}
 
-		// .sidebar__link
-
 		&__link {
       color: black;
       font-size: 20px;
       &:hover {
         text-decoration: underline;
+        color: #ffa07a;
       }
       
 		}
 }
 .special-product {
   padding: 20px;
-  border: 1px solid grey;
-		// .special-product__title
-
-		&__title {
-		}
-
-		// .special-product__item
+  //border: 1px solid grey;
 
 		&__item {
-      border: 1px solid yellow;
-      height: 150px;
+      //border: 1px solid yellow;
+      height: 200px;
       position: relative;
 		}
 
-		// .special-product__image
-
 		&__image {
-      //width: 100%;
-      
+      max-height: 200px;
+      height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          max-width: 100%;
+          display: block;
+          object-fit: cover;
+        }
 		}
-
-		// .special-product__button
 
 		&__button {
       position: absolute;
       top: 50%;
-      left: 50%;
+      left: 32px;
       display: block;
-      transform: translate(-50%, -50%); 
+      min-width: 150px;
+      transform: translateY(-50%); 
       cursor: pointer;
-      border: 2px solid yellow;
+      border: none;
       background-color: #ffff;
       font-size: 18px;
       font-weight: bold;
       padding: 15px 10px;
       border-radius: 10px;
+      &:hover {
+        background-color: #f1e3d1;
+      }
 		}
 }
 
 .products {
-  border: 1px solid orange;
+  //border: 1px solid orange;
   padding: 20px;
-  // .products__title
-
-  &__title {
-  }
-
-  // .products__items
 
   &__items {
     display: grid;
     grid-gap: 50px;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 200px);
+    grid-template-rows: repeat(2, 220px);
   }
 }
 
 .product {
 
-  // .product__item
-
   &__item {
-    border: 1px solid blue;
+    //border: 1px solid blue;
+    background-color: #f1e3d1;
     cursor: pointer;
-    //overflow: hidden;
+    &:hover {
+      background-color: #ffa07a;
+      
+    }
   }
-
-  //.product__container
-  &__container {
-  // width: 130px;
-  // height: 130px;
-  //width: 100%;
- 
-
- }
-
-  // .product__image
 
   &__image {
-    max-width: 100%;
-    
+    max-height: 150px;
+    height: 100%;
+    margin-bottom: 10px;
+    img {
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      display: block;
+      object-fit: cover;
+    }
   }
-
-  // .product__name
 
   &__name {
     text-align: center;
     font-size: 16px;
     font-weight: bold;
+    margin-bottom: 10px;
   }
-
-  // .product__price
 
   &__price {
     text-align: center;
@@ -208,32 +178,15 @@ li {
 
 
 .subscribe {
-  border: 1px solid orangered;
+  //border: 1px solid orangered;
   padding: 30px 20px;
   grid-column-start: 1;
   grid-column-end: 3;
-		// .subscribe__title
-
-		&__title {
-		}
-
-		// .subscribe__text
 
 		&__text {
       font-size: 20px;
       margin-bottom: 20px;
 		}
-
-		// .subscribe__form
-
-		&__form {
-		}
-
-    &__container {
-     // max-width: 50%;
-    }
-
-		// .subscribe__input
 
 		&__input {
       padding: 15px 15px;
@@ -241,25 +194,21 @@ li {
       border: 2px solid red;
       border-radius: 10px;
       min-width: 300px;
-      //max-width: 100%;
-      //width: 100%;
+      
       margin-right: 20px;
       &::placeholder {
         font-weight: 400;
         font-size: 14px;
-        //line-height: 27px;
         color: red;
       }
 		}
-
-		// .subscribe__button
 
 		&__button {
       cursor: pointer;
       border-radius: 10px;
       color: #ffff;
       background-color: red;
-      border: none;
+      border: 2px solid red;
       padding: 15px 15px;
       width: 150px;
       &:hover {
@@ -269,35 +218,16 @@ li {
       }
 		}
 }
-// .footer {
-//   grid-area: footer;
-//   border: 1px solid red;
-// }
+
 .footer {
   grid-area: footer;
   display: grid;
   grid-template-columns: 4fr 1fr 1fr;
-  border: 1px solid red;
-  background-color: black;
+  //border: 1px solid red;
+  background-color: #53350f;
   color:#ffff;
   padding: 20px;
   font-size: 18px;
-  // .footer__navigation
-
-  &__navigation {
-  }
-
-  // .footer__menu
-
-  &__menu {
-  }
-
-  // .footer__list
-
-  &__list {
-  }
-
-  // .footer__item
 
   &__item {
     &:not(:last-child) {
@@ -307,16 +237,9 @@ li {
 
   &__link {
     color: #ffff;
-  }
-
-  // .footer__contacts
-
-  &__contacts {
-  }
-
-  // .footer__social
-
-  &__social {
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__copyright {
@@ -325,35 +248,17 @@ li {
     grid-column-end: 4;
     margin-top: 20px;
   }
-
-  &__text {
-
-  }
 }
 
 .contacts {
-
-  // .contacts__title
 
   &__title {
     font-family: 'Montserrat';
     font-weight: 600;
     margin-bottom: 10px;
   }
-
-  // .contacts__address
-
-  &__address {
-  }
-
-  // .contacts__phone
-
-  &__phone {
-  }
 }
 .social {
-
-  // .social__title
 
   &__title {
     font-family: 'Montserrat';
@@ -366,9 +271,12 @@ li {
   }
 }
 
-@media(max-width: 768px) {
+@media(max-width: 1024px) {
+  .wrapper {
+    margin: 0;
+  }
   .main {
-    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 4fr;
   }
   .sidebar {
     grid-row-start: unset;
@@ -379,19 +287,31 @@ li {
       flex-direction: row;
       justify-content: space-between;
 		}
+    
   }
   .special-product {
     grid-column-start: 1;
     grid-column-end: 3;
+    &__button {
+      left: 50%;
+      top: 65%;
+      transform: translateX(-50%);
+		}
   }
   .subscribe {
-    grid-column-start: unset;
-    grid-column-end: unset;
+    grid-column-start: 1;
+    grid-column-end: 3;
    
   }
   .products {
     grid-column-start: 1;
     grid-column-end: 3;
+    &__items {
+      display: grid;
+      grid-gap: 30px;
+      grid-template-columns: repeat(3, 1fr);
+      
+    }
   }
   .footer {
     grid-template-columns: 1fr;
@@ -415,6 +335,57 @@ li {
       grid-column-end: unset;
     }
   }
+}
+@media(max-width: 768px) {
+  ._title {
+    font-size: 20px;
+  }
+ 
   
+  .products {
+    &__items {
+      grid-gap: 40px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 220px);
+    }
+  }
+  .subscribe {
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: nowrap;
+    }
+    &__input {
+      min-width: 150px;
+      width: 100%;
+    }
+  }
+}
+@media(max-width: 533px) {
+  .header {
+    &__logo {
+     img {
+       width: 35px;
+     }
+    }
+  }
 
+  .sidebar {
+    &__link {
+      font-size: 16px;
+    }
+  }
+  .products {
+    &__items {
+      grid-gap: 20px;
+    }
+  }
+  .subscribe {
+    &__text {
+      font-size: 16px;
+    }
+  }
+  .footer {
+    font-size: 16px;
+  }
 }
